@@ -5,6 +5,7 @@ import 'package:flutter_horseman/common/dao/dao_result.dart';
 import 'package:flutter_horseman/common/local/local_storage.dart';
 import 'package:flutter_horseman/common/model/User.dart';
 import 'package:flutter_horseman/common/redux/user_redux.dart';
+import 'package:flutter_horseman/common/utils/common_utils.dart';
 import 'package:redux/redux.dart';
 
 class UserDao {
@@ -20,10 +21,12 @@ class UserDao {
 
 
     ///切换语言
-     String localIndex = await LocalStorage.get(Config.LOCALE);
-    if(localIndex != null && localIndex.length !=0){
-
+    String localeIndex = await LocalStorage.get(Config.LOCALE);
+    if (localeIndex != null && localeIndex.length != 0) {
+      CommonUtils.changeLocale(store, int.parse(localeIndex));
     }
+
+    return new DataResult(res.data, (res.result && (token != null)));
   }
 
   ///获取本地登录用户信息
@@ -31,8 +34,9 @@ class UserDao {
     var userText = await LocalStorage.get(Config.USER_INFO);
     if (userText != null) {
       var userMap = json.decode(userText);
-      User user = User.fromJson(userMap);
-      return new DataResult(user, true);
+//      User user = User.fromJson(userMap);
+//      return new DataResult(user, true);
+      return new DataResult(null, false);
     } else {
       return new DataResult(null, false);
     }

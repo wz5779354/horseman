@@ -27,6 +27,11 @@ dependencies:
   shared_preferences: ^0.5.1+1
   flutter_redux: ^0.5.3
   rxdart: ^0.21.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_statusbar: ^0.0.1
+  fluttertoast: ^3.0.1
+  event_bus:  ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -75,3 +80,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+  assets:
+    - static/images/2x/welcome.png
+    - static/images/2x/welcome1.png
+    - static/images/2x/loading.jpeg
+    - static/images/2x/home_pressed.png
+    - static/images/2x/home_normal.png
+    - static/images/2x/message_pressed.png
+    - static/images/2x/message_normal.png
+    - static/images/2x/mine_pressed.png
+    - static/images/2x/mine_normal.png

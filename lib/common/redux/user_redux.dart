@@ -49,7 +49,7 @@ class UserInfoMiddleWare implements MiddlewareClass<HSManState> {
   }
 }
 
-class UserInfoEpic implements EpicClass<HSManState>{
+/*class UserInfoEpic implements EpicClass<HSManState>{
   @override
   Stream call(Stream<dynamic> actions, EpicStore<HSManState> store) {
 
@@ -69,4 +69,4 @@ class UserInfoEpic implements EpicClass<HSManState>{
     var res = await UserDao.getUserInfo(null);
     yield UpdateUserAction(res.data);
   }
-}
+}*/
